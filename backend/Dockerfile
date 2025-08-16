@@ -30,7 +30,7 @@ USER root
 # https://github.com/Zenika/alpine-chrome/blob/master/with-chromedriver/Dockerfile
 RUN apk add --no-cache chromium-chromedriver
 
-COPY --from=cargo-build /usr/src/reacher/target/x86_64-unknown-linux-musl/release/reacher_backend .
+COPY --from=cargo-build /usr/src/reacher/target/aarch64-unknown-linux-musl/release/reacher_backend .
 COPY --from=cargo-build /usr/src/reacher/backend/docker.sh .
 COPY --from=cargo-build /usr/src/reacher/backend/backend_config.toml .
 
