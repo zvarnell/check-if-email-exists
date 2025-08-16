@@ -4,7 +4,7 @@
 # Cargo Build Stage
 # ------------------------------------------------------------------------------
 
-FROM messense/rust-musl-cross:x86_64-musl as cargo-build
+FROM messense/rust-musl-cross:aarch64-musl as cargo-build
 
 WORKDIR /usr/src/reacher
 
@@ -14,7 +14,7 @@ COPY . .
 
 ENV SQLX_OFFLINE=true
 
-RUN cargo build --bin reacher_backend --release --target=x86_64-unknown-linux-musl
+RUN cargo build --bin reacher_backend --release --target=aarch64-unknown-linux-musl
 
 # ------------------------------------------------------------------------------
 # Final Stage
